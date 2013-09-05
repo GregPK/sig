@@ -1,0 +1,37 @@
+.col-md-4
+  .panel.panel-success
+    .panel-heading
+      %h4 Achievements (#{@achievements.size})
+    %ul.list-group
+      - @achievements.each do |a|
+        %li.list-group-item
+          %a.btn.btn-default
+            %span.glyphicon.glyphicon-plus
+          = a.name
+
+.col-md-4
+  .panel.panel-info
+    .panel-heading
+      %h4 Rewards (#{@rewards.size})
+    %ul.list-group
+      - @rewards.each do |a|
+        %li.list-group-item
+          %a.btn.btn-default
+            %span.glyphicon.glyphicon-star
+          = a.name
+.col-md-4
+  .panel.panel-inverse
+    .panel-heading
+      %h4
+        = @achiever.name 
+        = @achiever.points
+    %ul.list-group
+      -  @achiever.status_changes.each do |sc|
+        %li.list-group-item
+          = sc.source
+          = sc.point_change
+          \ -
+          = sc.points_after
+            
+
+
