@@ -1,8 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-hundred_point_award:
-  achiever: hundred_point_achiever
-  comment: MyText
-  point_change: 100
-  ts: <% Time.now %>
-
