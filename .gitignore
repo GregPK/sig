@@ -7,6 +7,13 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore vagrant machines and puppet modules with librarian config
+/.vagrant
+/.librarian
+/.tmp
+/modules
+
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite
