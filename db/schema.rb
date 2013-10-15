@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903151751) do
+ActiveRecord::Schema.define(version: 20130906144756) do
 
   create_table "achievements", force: true do |t|
     t.string   "name"
-    t.integer  "worth_points"
+    t.integer  "points"
     t.boolean  "repeatable"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20130903151751) do
 
   create_table "punishers", force: true do |t|
     t.string   "name"
-    t.integer  "point_change"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "achiever_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20130903151751) do
 
   create_table "rewards", force: true do |t|
     t.string   "name"
-    t.integer  "cost"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "achiever_id"

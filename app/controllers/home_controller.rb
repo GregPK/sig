@@ -4,4 +4,6 @@ class HomeController < ApplicationController
     @rewards = Reward.all
     @achiever = Achiever.first
   end
+
+
 end

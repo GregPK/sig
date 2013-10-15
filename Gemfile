@@ -35,6 +35,14 @@ group :doc do
 end
 
 gem 'factory_girl_rails'
+gem 'api_taster'
+
+gem 'asana'
+gem 'asana_to_sig', :path => '/home/mizy/Dropbox/projekty/www/self_improvement_game/asana_to_sig'
+
+group :dev do
+  gem 'sandi_meter'
+end
 
 group :test do
   gem 'guard-test'

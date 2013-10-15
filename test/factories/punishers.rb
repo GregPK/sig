@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :ten_point_punisher, class: Punisher do
-    point_change 10
+    points(-10)
   end
 end

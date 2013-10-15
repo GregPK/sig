@@ -5,6 +5,8 @@ SelfImprovementGame::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources :achievements
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -53,4 +55,9 @@ SelfImprovementGame::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  mount ApiTaster::Engine => "/api_taster" if Rails.env.development?
 end
+
+require_relative 'routes_api'
+
+

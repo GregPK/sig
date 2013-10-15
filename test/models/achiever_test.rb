@@ -33,7 +33,7 @@ class AchieverTest < ActiveSupport::TestCase
       @achiever.points.must_equal 0
      
       achievement = FactoryGirl.create(:achievement)
-      @achiever.has_achieved(achievement)
+      @achiever.use(achievement)
       @achiever.points.must_equal 1 
     end
   end
@@ -44,7 +44,7 @@ class AchieverTest < ActiveSupport::TestCase
       achiever.points.must_equal 100
      
       reward = FactoryGirl.create(:ten_point_reward)
-      achiever.use_reward(reward)
+      achiever.use(reward)
 
       achiever.points.must_equal 90
     end
@@ -55,7 +55,7 @@ class AchieverTest < ActiveSupport::TestCase
       achiever.points.must_equal 100
      
       punishment =  FactoryGirl.create(:ten_point_punisher)
-      achiever.punish(punishment)
+      achiever.use(punishment)
 
       achiever.points.must_equal 90
     end

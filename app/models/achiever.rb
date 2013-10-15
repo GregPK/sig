@@ -26,23 +26,10 @@ class Achiever < ActiveRecord::Base
     add_status_change(new_status)
   end
 
-  def use_reward(reward)
-    source = "Reward: [#{reward.name}]"
-    change_points(-reward.cost, source)
+  def use(point_change_item)
+    source = "#{point_change_item.name}"
+    change_points(point_change_item.points, source)
     self
   end
-
-  def has_achieved(achievement)
-    source = "Achieved: [#{achievement.name}]"
-    change_points(achievement.worth_points, source)
-    self
-  end
-
-  def punish(punisher)
-    source = "Punishment for: [#{punisher.name}]"
-    change_points(-punisher.point_change, source)
-    self
-  end
-
 
 end

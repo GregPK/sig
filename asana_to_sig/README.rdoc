@@ -1,0 +1,4 @@
+= AsanaToSig
+
+AsanaToSig is a simple tools that queries the Asana API and calls the SIG API to add Manadoo to a given user.
+

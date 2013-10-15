@@ -16,10 +16,10 @@ a1 = FactoryGirl.create(:asana_task_achievement, achiever_attr)
 a2 = FactoryGirl.create(:exercise, achiever_attr)
 
 Random.rand(1..10).times do |i|
-  gk.has_achieved(a1)
+  gk.use(a1)
 end
 
 Random.rand(1..4).times do |i|
-  gk.has_achieved(a2)
+  gk.use(a2)
 end
 
