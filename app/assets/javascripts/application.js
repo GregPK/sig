@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require self_improvement_game
+
 //= require_tree .

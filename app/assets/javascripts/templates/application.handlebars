@@ -1,0 +1,34 @@
+{{!--
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    {{#link-to 'home' class="navbar-brand"}}SIG{{/link-to}}
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        {{#link-to 'status_changes'}}Status{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'achievements'}}Ach{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'rewards'}}Rew{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'punishers'}}Pun{{/link-to}}
+      </li>
+    </ul>
+  </div>
+</nav>
+
+--}}
+
+<div class="row user-row">
+  {{ render "CurrentAchiever" model.achiever }}
+</div>
+
+<div class="row">
+  {{ outlet }}
+</div>
+

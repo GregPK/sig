@@ -1,0 +1,3 @@
+class AchievementSerializer < UsableSerializer
+
+end

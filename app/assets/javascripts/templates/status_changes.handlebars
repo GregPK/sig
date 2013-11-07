@@ -1,0 +1,19 @@
+<div class='col-md-3'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      <h4>Latest activity</h4>
+    </div>
+    <ul class='status-changes list-group'>
+      {{#each}}
+      {{log this}}
+      <li {{bind-attr class=":list-group-item isPositive:positive"}}>
+        {{point-change point_change}}
+        &ndash;
+        {{source}}
+        {{points_after}}
+        {{timestamp ts_relative}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

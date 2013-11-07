@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require "thor"
+
+module SigCLI
+  class SigCLI < Thor
+
+    # @todo
+    
+  end
+end
+ 
+SigCLI::SigCLI.start(ARGV)

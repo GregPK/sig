@@ -1,0 +1,18 @@
+<div class='col-md-3'>
+  <div class='panel panel-info'>
+    <div class='panel-heading'>
+      <h4>Rewards ({{count}})</h4>
+    </div>
+    <ul class='rewards list-group'>
+      {{#each}}
+      <li class='list-group-item'>
+        <a class='btn btn-action btn-reward' {{action 'reward' this }}>
+          {{add-sign points}}
+        </a>
+        {{name}}
+        {{point-type points 'achievement'}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

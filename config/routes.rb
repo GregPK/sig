@@ -5,7 +5,22 @@ SelfImprovementGame::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+
   resources :achievements
+  resources :rewards
+  resources :punishers
+
+  resources :status_changes do
+    collection do
+      post 'from_reward/:id', to: 'status_changes#create_from_reward'
+      post 'from_achievement/:id', to: 'status_changes#create_from_achievement'
+      post 'from_punishment/:id', to: 'status_changes#create_from_punishment'
+    end
+  end
+
+  get 'achievers/:id' => 'achievers#show_current', as: :achiever_current
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -41,7 +56,7 @@ SelfImprovementGame::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

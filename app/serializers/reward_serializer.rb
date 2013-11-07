@@ -1,0 +1,3 @@
+class RewardSerializer < UsableSerializer
+
+end

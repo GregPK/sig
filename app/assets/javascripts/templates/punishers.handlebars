@@ -1,0 +1,18 @@
+<div class='col-md-3'>
+  <div class='panel panel-warning'>
+    <div class='panel-heading'>
+      <h4>Punishers ({{count}})</h4>
+    </div>
+    <ul class='list-group'>
+      {{#each}}
+      <li class='list-group-item'>
+        <a class='btn btn-action btn-punisher' {{action 'punish' this }}>
+          {{add-sign points}}
+        </a>
+        {{name}}
+        {{point-type points 'punisher'}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

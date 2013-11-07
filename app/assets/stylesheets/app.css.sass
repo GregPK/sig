@@ -1,0 +1,46 @@
+@import '_colors.sass'
+@import '_mixins.sass'
+
+@mixin point-presentation
+  border-radius: 9px
+  width: 32px
+  display: inline-block
+
+span.points-change
+  @include point-presentation
+
+  &.point-cost
+    background: $punisher-bg
+
+  &.point-gain
+    background: $achievement-bg
+
+span.points-type
+  @include point-presentation
+
+  &.points-type-reward
+    background: $reward-bg
+
+  &.points-type-punisher
+    background: $punisher-bg
+
+  &.points-type-achievement
+    background: $achievement-bg
+
+.btn-action
+  width: 50px
+
+  &.btn-achievement
+    color: $achievement-text
+    background-color: $achievement-bg
+    border-color: $achievement-border
+
+  &.btn-reward
+    color: $reward-text
+    background-color: $reward-bg
+    border-color: $reward-border
+
+  &.btn-punisher
+    color: $punisher-text
+    background-color: $punisher-bg
+    border-color: $punisher-border

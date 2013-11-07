@@ -1,0 +1,3 @@
+class PunisherSerializer < UsableSerializer
+
+end
