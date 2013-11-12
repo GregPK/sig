@@ -2,6 +2,8 @@
 @import '_mixins.sass'
 
 @mixin point-presentation
+  border-style: solid
+  border-weight: 1px
   border-radius: 9px
   width: 32px
   display: inline-block
@@ -13,10 +15,14 @@ span.points-change
   @include point-presentation
 
   &.point-cost
+    color: $punisher-text
     background: $punisher-bg
+    border-color: $punisher-border
 
   &.point-gain
+    color: $achievement-text
     background: $achievement-bg
+    border-color: $achievement-border
 
 span.points-type
   @include point-presentation
