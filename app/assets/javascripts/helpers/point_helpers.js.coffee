@@ -3,10 +3,10 @@ Ember.Handlebars.helper "point-change", (points, options) ->
 
   klass = ''
   if points > 0
-    klass = 'point-cost'
+    klass = 'point-gain'
     points = "+#{points}"
   else if points < 0
-    klass = 'point-gain'
+    klass = 'point-cost'
     points = "#{points}".replace('-','-&thinsp;')
 
   new Handlebars.SafeString("<span class=\"label points-change #{klass}\">" + points + "</span>")
