@@ -9,12 +9,17 @@ FactoryGirl.define do
       points(-6)
     end
 
+    factory :comedy_animated_show do
+      name "Watch an episode of FG/TS/AD/SP"
+      points(-3)
+    end
+
     factory :fifa do
       name "Play a game in FIFA"
       points(-3)
     end
 
-    factory :scrolls do 
+    factory :scrolls do
       name "Play 0,5h of scrolls"
       points(-4)
     end
