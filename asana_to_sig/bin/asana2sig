@@ -4,7 +4,7 @@ require "thor"
 require_relative '../lib/asana_to_sig'
 
 module AsanaToSig
-  class Asana2SIGCLI < Thor
+  class AsanaToSigCLI < Thor
     desc "check_achievements_5mins ASANA_KEY USER_ID WORKSPACE_ID", "Checks the tasks done in the last 5 minutes and processes them"
     
     def check_achievements_5mins(asana_key, sig_user_id, workspace_id)
@@ -17,9 +17,8 @@ module AsanaToSig
       a2s.sig_user_id = sig_user_id  
       a2s.workspace_id = workspace_id 
       a2s.get_from_last_given_minutes(minutes)
-
     end
   end
 end
  
-AsanaToSig::Asana2SIGCLI.start(ARGV)
+AsanaToSig::AsanaToSigCLI.start(ARGV)
