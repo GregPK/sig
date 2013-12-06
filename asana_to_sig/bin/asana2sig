@@ -5,19 +5,21 @@ require_relative '../lib/asana_to_sig'
 
 module AsanaToSig
   class AsanaToSigCLI < Thor
-    desc "check_achievements_5mins ASANA_KEY USER_ID WORKSPACE_ID", "Checks the tasks done in the last 5 minutes and processes them"
+    desc "print_completed ASANA_KEY WORKSPACE_ID MINUTES", "Prints the tasks done in the last X minutes" 
+    def print_completed(asana_key, workspace_id, minutes)
+      tasks = cli(asana_key).get_completed(workspace_id,minutes)
+      tasks.each do |task|
+        puts "#{task.name} - #{task.completed_at}"
+      end
+    end
     
-    def check_achievements_5mins(asana_key, sig_user_id, workspace_id)
-      check_completed(asana_key, sig_user_id, workspace_id, 5)
+    ###########
+    private
+    
+    def cli(asana_key)
+      AsanaToSig::CLI.new(asana_key)
     end
-
-    desc "check_completed", "Checks the tasks done in the last X minutes and processes them" 
-    def check_completed(asana_key, sig_user_id, workspace_id, minutes)
-      a2s = AsanaToSig.new(asana_key)
-      a2s.sig_user_id = sig_user_id  
-      a2s.workspace_id = workspace_id 
-      a2s.get_from_last_given_minutes(minutes)
-    end
+    
   end
 end
  

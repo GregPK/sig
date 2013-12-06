@@ -6,7 +6,8 @@ It could be considered a simplified version of HabitRPG.
 
 ## Flow
 
-In this app, you are an Achiever. Every achiever has Manado (mana-doo as in mana-for-doing). You Manado changes in several ways:
+In this app, you are an Achiever. Every achiever has Manado (mana-doo as in mana-for-doing). 
+Your Manado changes in several ways:
 
  * You get Manado by completing Achievements (an action that you want to 
    reinforce doing, either one-off or repeatable)

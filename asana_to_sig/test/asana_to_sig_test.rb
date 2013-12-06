@@ -2,9 +2,8 @@ require 'test_helper'
 require 'minitest/spec'
 require 'minitest/mock'
 require 'minitest/autorun' 
-require 'pry'
 
-require_relative '../lib/asana_to_sig'
+require 'asana_to_sig'
 
 class AsanaToSigSpec < MiniTest::Spec
   before do

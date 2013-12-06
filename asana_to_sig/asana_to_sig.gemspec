@@ -13,11 +13,11 @@ Gem::Specification.new do |s|
   s.summary     = "AsanaToSig is a bridge for adding Manado to a user based on their Asana activity"
   s.description = "Description of AsanaToSig."
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{lib}/**/*.rb", "bin/*" "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency "thor"
-
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "bundler", "~> 1.3"
+  s.add_development_dependency "rake"
 end

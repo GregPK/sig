@@ -1,8 +1,6 @@
 require 'test_helper'
-require 'pry'
 
-require_relative '../lib/asana/task'
-require_relative '../lib/asana/tasks'
+require 'asana_to_sig'
 
 class AsanaTasksSpec < MiniTest::Spec
   before do
@@ -26,38 +24,41 @@ class AsanaTasksSpec < MiniTest::Spec
     #stub to return the tasks
     response = MiniTest::Mock.new
     response.expect(:body, {data: @tasks}.to_json )
-    @a2s.expect(:make_request,response,[String,Hash])
+    @a2s.expect(:make_request,@tasks,[String,Hash])
 
     @tasks_repo = AsanaToSig::Tasks.new(@a2s)
+    @tasks_repo.set_tasks_from_data(@tasks)
+    
+    
   end
 
-  describe '#for_workspace' do
-    it "should return all tasks when not given a date" do
-        tasks = @tasks_repo.for_workspace(nil)
-        tasks.size.must_equal(@tasks.size)
+  describe '#completed_for_workspace' do
+    it "should return all completed tasks when not given a date" do
+      tasks = @tasks_repo.completed_for_workspace(nil)
+      tasks.size.must_equal(5)
     end
     
-    it "should return 5 tasks when querying for completed in all of time" do
+    it "should return all tasks when querying for completed in all of time" do
       all_eternity = Time.at(0) .. Time.parse('2039-12-30')
-      tasks = @tasks_repo.for_workspace(nil,all_eternity)
+      tasks = @tasks_repo.completed_for_workspace(nil,all_eternity)
       tasks.size.must_equal(5)
     end
     
     it "should return 3 tasks when querying for completed the last minute" do
       last_minute = [@now-60,@now]
-      tasks = @tasks_repo.for_workspace(nil,last_minute)
+      tasks = @tasks_repo.completed_for_workspace(nil,last_minute)
       tasks.size.must_equal(3)
     end
     
     it "should return 4 tasks when querying for completed the last 4 minutes" do
       time_range = [@now-4*60,@now]
-      tasks = @tasks_repo.for_workspace(nil,time_range)
+      tasks = @tasks_repo.completed_for_workspace(nil,time_range)
       tasks.size.must_equal(4)
     end
     
     it "should return 5 tasks when querying for completed the last 7 minutes" do
       time_range = [@now-7*60,@now]
-      tasks = @tasks_repo.for_workspace(nil,time_range)
+      tasks = @tasks_repo.completed_for_workspace(nil,time_range)
       tasks.size.must_equal(5)
     end
   end

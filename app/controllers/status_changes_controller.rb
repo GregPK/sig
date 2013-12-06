@@ -14,9 +14,9 @@ class StatusChangesController < ApplicationController
   end
 
   def create_from(model_klass, id)
-      usable = model_klass.find(id)
-      new_status_change = usable.achiever.use(usable)
-      respond_with(new_status_change)
+    usable = model_klass.find(id)
+    new_status_change = usable.achiever.use(usable)
+    respond_with(new_status_change)
   end
 
   def index

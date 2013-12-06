@@ -39,13 +39,14 @@ end
 gem 'factory_girl_rails'
 gem 'api_taster'
 
-#gem 'asana'
-#gem 'asana_to_sig', :path => '/home/mizy/Dropbox/projekty/www/self_improvement_game/asana_to_sig'
+
+gem 'asana_to_sig', :path => '/home/mizy/Dropbox/projekty/www/self_improvement_game/asana_to_sig'
 
 gem 'ember-rails'
 gem "active_model_serializers"
 
 group :dev do
+  gem 'pry'
   gem 'sandi_meter'
 end
 

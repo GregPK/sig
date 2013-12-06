@@ -1,3 +1,9 @@
+PATH
+  remote: asana_to_sig
+  specs:
+    asana_to_sig (0.0.1)
+      thor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -192,6 +198,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   api_taster
+  asana_to_sig!
   coffee-rails (~> 4.0.0)
   ember-rails
   factory_girl_rails
@@ -200,6 +207,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   minitest-spec-rails
+  pry
   rails (= 4.0.1)
   sandi_meter
   sass-rails (~> 4.0)
