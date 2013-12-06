@@ -2,12 +2,11 @@ class AsanaGet
   def self.sync_1_min
     asana_key = "**ASANA_API_KEY**" 
     workspace_id = "7566362730570"
-    now = Time.now
+    t = Time.now
     
     cli = AsanaToSig::CLI.new(asana_key)
-    timespan = [now-10000,now]
+    timespan = [Time.at(t-60-t.to_i%60), Time.at(t-t.to_i%60)]
     tasks = cli.get_completed_between(workspace_id,timespan)
-    
     
     if tasks.size > 0
       achiever = Achiever.find(1)
