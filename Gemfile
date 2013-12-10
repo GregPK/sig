@@ -40,7 +40,7 @@ gem 'factory_girl_rails'
 gem 'api_taster'
 
 
-gem 'asana_to_sig', :path => '/home/mizy/Dropbox/projekty/www/self_improvement_game/asana_to_sig'
+gem 'asana_to_sig', :path => 'asana_to_sig/'
 
 gem 'ember-rails'
 gem "active_model_serializers"
