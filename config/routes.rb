@@ -19,6 +19,8 @@ SelfImprovementGame::Application.routes.draw do
   end
 
   get 'achievers/:id' => 'achievers#show_current', as: :achiever_current
+  
+  post 'sync/' => 'sync#all', as: :sync
 
 
 

@@ -17,8 +17,9 @@ namespace :asana do
     task :all => :environment do
       asana_key = "**ASANA_API_KEY**" 
       workspace_id = "7566362730570"
-    
-      service = AsanaSync::AsanaSyncService.new(asana_key,workspace_id)
+      
+      logger = ActiveSupport::Logger.new(STDOUT)
+      service = AsanaSync::AsanaSyncService.new(asana_key,workspace_id,logger)
       service.sync
     end
       

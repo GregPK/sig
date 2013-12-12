@@ -1,8 +1,9 @@
 module AsanaSync
   class AsanaSyncService
-    def initialize(api_key, workspace_id)
+    def initialize(api_key, workspace_id,logger = Naught.build)
       @api_key = api_key
       @workspace_id = workspace_id
+      @logger = logger
     end
 
     def sync(clock = DateTime)
@@ -17,16 +18,16 @@ module AsanaSync
       if tasks.size > 0
         achiever = Achiever.find(1)
         
-        puts "Found #{tasks.size} new done tasks in timespan #{timespan}"
+        @logger.info "Found #{tasks.size} new done tasks in timespan #{timespan}"
         tasks.each do |task|
-          puts "Synchronizing task [#{task.name}], completed at [#{task.completed_at}] for [#{task.manado}] points"        
+          @logger.info "Synchronizing task [#{task.name}], completed at [#{task.completed_at}] for [#{task.manado}] points"
           achievement = Achievement.new(achiever: achiever, name:"Asana: [#{task.name}]", points: task.manado)
           achiever.use(achievement)
-          puts "  Success... Points for [#{achiever.name}] after task: [#{achiever.points}]"
+          @logger.info "  Success... Points for [#{achiever.name}] after task: [#{achiever.points}]"
         end
       end
       
-      puts "Ending sync and setting last sync time to [#{time_now}]"
+      @logger.info "Ending sync and setting last sync time to [#{time_now}]"
       sync_time.set_last(time_now)
     end
   end
