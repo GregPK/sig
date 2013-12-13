@@ -21,7 +21,7 @@ class StatusChangesController < ApplicationController
 
   def index
     @all = StatusChange.all
-    render json: @all.order( "ts" => :desc )
+    render json: @all.order( "ts" => :desc ).limit(20)
   end
 
 end
