@@ -17,7 +17,6 @@ module AsanaToSig
       params_default =  { 
         :assignee => "me", 
         :opt_pretty => true, 
-        :include_archived => "1" 
       }
       
       params = params_default.merge(params)
