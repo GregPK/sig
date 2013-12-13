@@ -19,11 +19,11 @@ class Achiever < ActiveRecord::Base
     new_status
   end
 
-  def change_points(points_delta, source = "unknown")
+  def change_points(points_delta, source = "unknown", ts = nil)
     points_now = points
     points_after = points_now+points_delta
 
-    new_status = StatusChange.create( point_change:points_delta, points_after: points_after, source: source )
+    new_status = StatusChange.create( point_change:points_delta, points_after: points_after, source: source, ts: ts )
     add_status_change(new_status)
   end
 

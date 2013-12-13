@@ -21,8 +21,8 @@ module AsanaSync
         @logger.info "Found #{tasks.size} new done tasks in timespan #{timespan}"
         tasks.each do |task|
           @logger.info "Synchronizing task [#{task.name}], completed at [#{task.completed_at}] for [#{task.manado}] points"
-          achievement = Achievement.new(achiever: achiever, name:"Asana: [#{task.name}]", points: task.manado, ts: task.completed_at)
-          achiever.use(achievement)
+          name = "Asana: [#{task.name}]"
+          achiever.change_points(task.manado, name, task.completed_at)
           @logger.info "  Success... Points for [#{achiever.name}] after task: [#{achiever.points}]"
         end
       end
