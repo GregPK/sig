@@ -17,6 +17,11 @@ Ember.Handlebars.helper "point-type", (points, type) ->
   points = "#{points}".replace('-','-&thinsp;')
 
   new Handlebars.SafeString("<span class=\"label points-type points-type-#{type}\">" + points + "</span>")
+  
+Ember.Handlebars.helper "point-status", (points, type) ->
+  points = "#{points}".replace('-','-&thinsp;')
+
+  new Handlebars.SafeString("<span class=\"label points-type points-type-status\">" + points + "</span>")  
 
 Ember.Handlebars.helper "add-sign", (points) ->
   points = parseInt(points)
