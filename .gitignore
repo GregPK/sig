@@ -6,7 +6,7 @@
 
 nohup.out
 public/assets/
-srv_start.sh
+*.sh
 
 
 # Ignore bundler config.

@@ -11,6 +11,6 @@ SelfImprovementGame.StatusChange = DS.Model.extend(
   relative_ts: (->
     ts = @get('ts')
     return null unless ts? and typeof(ts) is 'object'
-    "#{ts.getFullYear()}/#{ts.getMonth()}/#{ts.getDay()}"
+    "#{ts.getFullYear()}-#{ts.getMonth()}-#{ts.getDay()} #{ts.getHours()}:#{ts.getMinutes()}:#{ts.getSeconds()}"
   ).property('ts')
 )
