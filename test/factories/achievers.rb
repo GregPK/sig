@@ -1,4 +1,3 @@
-
 FactoryGirl.define do
   factory :zero_point_achiever, class: Achiever do
     name "Zerious"

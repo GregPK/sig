@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: achievers
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Achiever < ActiveRecord::Base
   has_many :status_changes, -> { order ts: :desc }, dependent: :destroy
 
