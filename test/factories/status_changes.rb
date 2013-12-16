@@ -1,4 +1,3 @@
-
 FactoryGirl.define do
   factory :status_change, class: StatusChange do
     point_change 1

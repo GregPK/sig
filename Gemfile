@@ -48,8 +48,12 @@ gem 'ember-rails'
 gem "active_model_serializers"
 
 group :dev do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem 'pry'
+  gem "awesome_print"
   gem 'sandi_meter'
+  gem 'annotate', ">=2.6.0"
 end
 
 group :test do
