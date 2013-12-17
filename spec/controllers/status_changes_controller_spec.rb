@@ -1,48 +1,48 @@
-require 'test_helper'
+require 'spec_helper'
 require 'json'
+require 'pry'
 
 
-class StatusChangesControllerSpec < ActionDispatch::IntegrationTest
-  before do
-   # @item = Factory.create(:item)
-  end
+describe StatusChangesController do
 
   describe "when using a Reward" do
     it "responds with the status change" do
-      post "/status_changes/from_reward/1.json"
-      response.success?.must_equal true
-      stat_change = JSON.parse(body)
+      xhr :post, :create_from_reward, {:id => '1'}, format: :js
       
-      stat_change["id"].wont_be_nil
-      stat_change["points_after"].wont_be_nil
-      stat_change["point_change"].wont_be_nil
-      stat_change["point_change"].must_be :<=, 0
+      expect(response.success?).to be true
+      stat_change = JSON.parse(response.body)['status_change']
+      
+      expect(stat_change["id"]).not_to be_nil
+      expect(stat_change["points_after"]).not_to be_nil
+      expect(stat_change["point_change"]).not_to be_nil
+      expect(stat_change["point_change"]).to be <= 0
     end
   end
   
   describe "when using a Punisher" do
     it "responds with the status change" do
-      post "/status_changes/from_punishment/1.json"
-      response.success?.must_equal true
-      stat_change = JSON.parse(body)
+      xhr :post, :create_from_punishment, {:id => '1'}, format: :js
+      expect(response.success?).to be true
+      stat_change = JSON.parse(response.body)['status_change']
       
-      stat_change["id"].wont_be_nil
-      stat_change["points_after"].wont_be_nil
-      stat_change["point_change"].wont_be_nil
-      stat_change["point_change"].must_be :<=, 0
+      expect(stat_change["id"]).not_to be_nil
+      expect(stat_change["points_after"]).not_to be_nil
+      expect(stat_change["point_change"]).not_to be_nil
+      expect(stat_change["point_change"]).to be <= 0
     end
   end
   
   describe "when achieved and Achievement" do
     it "responds with the status change" do
-      post "/status_changes/from_achievement/1.json"
-      response.success?.must_equal true
-      stat_change = JSON.parse(body)
+      xhr :post, :create_from_achievement, {:id => '1'}, format: :json
       
-      stat_change["id"].wont_be_nil
-      stat_change["points_after"].wont_be_nil
-      stat_change["point_change"].wont_be_nil
-      stat_change["point_change"].must_be :>=, 0
+      expect(response.success?).to be true
+      stat_change = JSON.parse(response.body)['status_change']
+      
+      expect(stat_change["id"]).not_to be_nil
+      expect(stat_change["points_after"]).not_to be_nil
+      expect(stat_change["point_change"]).not_to be_nil
+      expect(stat_change["point_change"]).to be >= 0
     end
   end
 
