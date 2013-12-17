@@ -4,7 +4,7 @@ class AddAsanaSyncDataToAchiever < ActiveRecord::Migration
     add_column :achievers, :asana_api_key, :string
     add_column :achievers, :asana_workspace_id, :string
     reversible do |dir|
-      dir.up { Achiever.update_all asana_sync_enabled: 'false' }
+      dir.up { Achiever.update_all asana_sync_enabled: false }
     end
   end
 end

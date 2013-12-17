@@ -9,7 +9,7 @@ describe StatusChangesController do
     it "responds with the status change" do
       xhr :post, :create_from_reward, {:id => '1'}, format: :js
       
-      expect(response.success?).to be true
+      expect(response.success?).to be_true
       stat_change = JSON.parse(response.body)['status_change']
       
       expect(stat_change["id"]).not_to be_nil
@@ -22,7 +22,7 @@ describe StatusChangesController do
   describe "when using a Punisher" do
     it "responds with the status change" do
       xhr :post, :create_from_punishment, {:id => '1'}, format: :js
-      expect(response.success?).to be true
+      expect(response.success?).to be_true
       stat_change = JSON.parse(response.body)['status_change']
       
       expect(stat_change["id"]).not_to be_nil
@@ -36,7 +36,7 @@ describe StatusChangesController do
     it "responds with the status change" do
       xhr :post, :create_from_achievement, {:id => '1'}, format: :json
       
-      expect(response.success?).to be true
+      expect(response.success?).to be_true
       stat_change = JSON.parse(response.body)['status_change']
       
       expect(stat_change["id"]).not_to be_nil

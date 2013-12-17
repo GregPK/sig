@@ -14,13 +14,16 @@ namespace :asana do
       puts time.get_last
     end
     
+   desc "Sync all users now"
     task :all => :environment do
-      asana_key = "**ASANA_API_KEY**" 
-      workspace_id = "7566362730570"
-      
       logger = ActiveSupport::Logger.new(STDOUT)
-      service = AsanaSync::AsanaSyncService.new(asana_key,workspace_id,logger)
-      service.sync
+      
+      sync_achievers = Achiever.where(asana_sync_enabled: true)
+      
+      sync_achievers.each do |achiever|
+        service = AsanaSync::AsanaSyncService.new(achiever,logger)
+        service.sync
+      end
     end
       
   end

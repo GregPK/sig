@@ -5,7 +5,8 @@ class SyncController < ApplicationController
     strio = StringIO.new
     logger = ActiveSupport::Logger.new strio
     
-    service = AsanaSync::AsanaSyncService.new(params[:api_key],params[:workspace_id],logger)
+    achiever = current_user
+    service = AsanaSync::AsanaSyncService.new(achiever,logger)
     service.sync
     render json: strio.string 
   end

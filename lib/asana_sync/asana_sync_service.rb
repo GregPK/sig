@@ -1,8 +1,9 @@
 module AsanaSync
   class AsanaSyncService
-    def initialize(api_key, workspace_id,logger = Naught.build)
-      @api_key = api_key
-      @workspace_id = workspace_id
+    def initialize(achiever,logger = Naught.build)
+      @achiever = achiever
+      @api_key = achiever.asana_api_key
+      @workspace_id = achiever.asana_workspace_id
       @logger = logger
     end
 
@@ -22,7 +23,7 @@ module AsanaSync
         tasks.each do |task|
           @logger.info "Synchronizing task [#{task.name}], completed at [#{task.completed_at}] for [#{task.manado}] points"
           name = "Asana: [#{task.name}]"
-          achiever.change_points(task.manado, name, task.completed_at)
+          @achiever.change_points(task.manado, name, task.completed_at)
           @logger.info "  Success... Points for [#{achiever.name}] after task: [#{achiever.points}]"
         end
       end
