@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: achievers
+#
+#  id                 :integer          not null, primary key
+#  name               :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  asana_sync_enabled :boolean
+#  asana_api_key      :string(255)
+#  asana_workspace_id :string(255)
+#
+
 require 'spec_helper'
 
 describe Achiever do

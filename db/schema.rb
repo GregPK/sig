@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906144756) do
+ActiveRecord::Schema.define(version: 20131217155851) do
 
   create_table "achievements", force: true do |t|
     t.string   "name"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20130906144756) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "asana_sync_enabled"
+    t.string   "asana_api_key"
+    t.string   "asana_workspace_id"
   end
 
   create_table "punishers", force: true do |t|
