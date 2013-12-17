@@ -27,6 +27,7 @@ public/assets/
 /log/*.log
 /tmp
 /*.swp
+/coverage
 
 .c9revisions/*
 .settings
