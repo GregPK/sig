@@ -17,8 +17,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem "haml-rails"
 
-
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -36,30 +34,36 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'factory_girl_rails'
-gem 'api_taster'
-
-
 gem 'asana_to_sig', :path => 'asana_to_sig/'
 gem 'naught'
-
 
 gem 'ember-rails'
 gem "active_model_serializers"
 
-group :dev do
-  gem "better_errors"
-  gem "binding_of_caller"
+group :development do
   gem 'pry'
-  gem "awesome_print"
+  gem "binding_of_caller"
+
+  #code quality  
   gem 'sandi_meter'
+  gem 'api_taster'
+  
+  # better logging and errors
+  gem "awesome_print"
+  gem "better_errors"
   gem 'annotate', ">=2.6.0"
+
+  # guards
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'guard-test'
 end
 
-group :test do
-  gem 'guard-test'
-  gem 'minitest-spec-rails'
+group :development, :test do
+  gem "rspec-rails", '~> 3.0.0.beta'
+  gem 'factory_girl_rails'
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
