@@ -14,7 +14,7 @@ p1 = FactoryGirl.create(:unhealthy_food, achiever_attr)
 # achievements
 a1 = FactoryGirl.create(:asana_task_achievement, achiever_attr)
 a2 = FactoryGirl.create(:exercise, achiever_attr)
-
+a3 = FactoryGirl.create(:achievement, achiever_attr)
 
 
 (0..15).each do |i|
