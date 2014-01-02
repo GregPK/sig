@@ -9,6 +9,7 @@
 #  asana_sync_enabled :boolean
 #  asana_api_key      :string(255)
 #  asana_workspace_id :string(255)
+#  asana_last_synced  :datetime
 #
 
 class Achiever < ActiveRecord::Base
