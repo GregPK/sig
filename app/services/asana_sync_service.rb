@@ -11,12 +11,13 @@ class AsanaSyncService
   end
 
   def sync(asana_sync_provider = AsanaToSig::CLI, clock = DateTime)
-    last_sync = @achiever.asana_last_synced
+    last_sync = @achiever.asana_last_synced || Time.at(0)
     time_now = clock.now
     timespan = [last_sync, time_now]
     
     cli = asana_sync_provider.new(@api_key)
     
+    binding.pry
     tasks = cli.get_completed_between(@workspace_id,timespan)
 
     if tasks.size > 0
