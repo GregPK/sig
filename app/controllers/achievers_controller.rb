@@ -2,7 +2,7 @@ class AchieversController < ApplicationController
   respond_to :json
 
   def show_current
-    @all = Achiever.find_by name: "GK"
+    @all = Achiever.find(1)
 
     render json: @all
   end
