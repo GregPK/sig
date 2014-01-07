@@ -2,20 +2,17 @@
 
 SIG is an app with a simple premise: you achieve more when you have to work for your rewards.
 
-It could be considered a simplified version of HabitRPG.
-
 ## Flow
 
 In this app, you are an Achiever. Every achiever has Manado (mana-doo as in mana-for-doing). 
 Your Manado changes in several ways:
 
  * You get Manado by completing Achievements (an action that you want to 
-   reinforce doing, either one-off or repeatable)
+   reinforce doing)
  * You lower Manado by using a Reward (ie something pleasurable for you)
  * You lower Manado by tripping a Punisher (an action that you want to weed out)
 
 Thats it!
-
 
 ## Features
 
@@ -23,19 +20,29 @@ Thats it!
 
 In both the API and Web Client:
 
- * manage Rewards, Punishments and Achievements
  * ability to lower/raise Manadoo by triggering Rewards, Punishments 
    and Achievements
  * Asana integration built in
+ 
+ 
 
 ### Planned
 
 #### v 0.2
   
- * add user authentication
- *  
+##### Features
 
+ * *add user authentication* - now 
+ * *automatic refresh* (you have to refresh the page now, which is stupid)
+ * add a refresh button near the points 
+ * allow user to add an achievement, reward, punisher
+ * make a simple chart for displaying point change in the last few days
 
+##### Refactors and improvements
+
+ * add moment.js to get proper dates (and transforms)
+
+#### v 0.3 - TBA 
 
 ### Later
 
@@ -46,8 +53,7 @@ I don't want to fall prey to future creep, but there are some fun things that I 
  * challenges and badges - I feel that offering the player progressively
    more challenging chains of achievements can have a positive effect 
    (ie. if you are stuck in a rut, the system will challenge you to acquire 
-   100 points within 7 days.  Or it can detect that you've been letting yourself go lately 
-   and suggest.
+   100 points within 7 days.  Or it can detect that you've been letting yourself    go lately and offer you a challenge for a "bounce back" badge or something.
 
 ## Other considerations
 
@@ -57,7 +63,7 @@ I don't want to fall prey to future creep, but there are some fun things that I 
    muddles the direct correlation of achievement=reward. 
  * HabitRPG sometimes loses data (happened to me more that once) 
    or kills you off if you forget to tend to it, which is one more similiarity 
-   to a cow clicker game that I can handle.
+   to a cow clicker that I can handle.
  * It is a bit infantile, which isn't really a bad thing per se, but in 
    this case it ticked me off.
 
@@ -72,7 +78,7 @@ I don't want to fall prey to future creep, but there are some fun things that I 
 
 ### Ruby version
 
-### System dependencies
+Deveped using Ruby 2.0, but I hadn't used any version specific things, so should probably run on 1.9.3 (not tested)
 
 ### Configuration
 
@@ -80,12 +86,8 @@ I don't want to fall prey to future creep, but there are some fun things that I 
 
 ### Database initialization
 
-### How to run the test suite
-
 ### Deployment instructions
 
-## Changelog
-
-
+//## Changelog
 
 

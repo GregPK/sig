@@ -11,7 +11,7 @@ class AsanaSyncService
   end
 
   def sync(asana_sync_provider = AsanaToSig::CLI, clock = DateTime)
-    last_sync = @achiever.asana_last_synced
+    last_sync = @achiever.asana_last_synced || Time.at(0)
     time_now = clock.now
     timespan = [last_sync, time_now]
     

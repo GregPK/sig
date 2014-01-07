@@ -5,9 +5,15 @@ class SyncController < ApplicationController
     strio = StringIO.new
     logger = ActiveSupport::Logger.new strio
     
-    achiever = current_user
-    service = AsanaSync::AsanaSyncService.new(achiever,logger)
-    service.sync
+    sync_achievers = Achiever.where(asana_sync_enabled: true)
+      
+    sync_achievers.each do |achiever|
+      service = AsanaSyncService.new(achiever,logger)
+      service.sync
+      achiever.save
+    end
+    
+    
     render json: strio.string 
   end
 end
