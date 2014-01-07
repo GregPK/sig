@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_achiever
-    Achiever.find_by name: "GK"
+    Achiever.find(1)
   end
 end

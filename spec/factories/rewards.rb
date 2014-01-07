@@ -1,8 +1,12 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :ten_point_reward, class: Reward do
-    points(-10)
+  factory :generic_reward, class: Reward do
+    
+    factory :ten_point_reward do
+      name "Ten point reward"
+      points(-10)
+    end
 
     factory :qi do
       name "Watch an episode of QI"
