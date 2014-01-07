@@ -17,7 +17,6 @@ class AsanaSyncService
     
     cli = asana_sync_provider.new(@api_key)
     
-    binding.pry
     tasks = cli.get_completed_between(@workspace_id,timespan)
 
     if tasks.size > 0
