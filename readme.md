@@ -14,6 +14,13 @@ Your Manado changes in several ways:
 
 Thats it!
 
+## Status 
+
+VERSION: 0.1
+
+This isn't really ready for anyone else than me, but putting in out there nonetheless. Plan
+to give something more usefull around version 0.2.
+
 ## Features
 
 ### Done
@@ -23,8 +30,6 @@ In both the API and Web Client:
  * ability to lower/raise Manadoo by triggering Rewards, Punishments 
    and Achievements
  * Asana integration built in
- 
- 
 
 ### Planned
 
