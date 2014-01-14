@@ -8,5 +8,11 @@ FactoryGirl.define do
       points_after 100
       comment "This cuks"
     end
+    
+    factory :ten_points_now do
+      point_change 5
+      points_after 5
+    end
+
   end
 end

@@ -69,4 +69,17 @@ describe Achiever do
       expect(achiever.points).to be 90
     end
   end
+  
+  describe "when given something with and older ts that was completed before its creation" do
+    it "should get achiever points from creation date, not ts" do
+      achiever = FactoryGirl.create(:zero_point_achiever)
+      expect(achiever.points).to be 0
+      
+      ts_five_minutes_ago_data = { created_at: Time.now()+10, ts: Time.now()-300 }
+      achiever.add_status_change(FactoryGirl.create(:ten_points_now, { points_after: 10})) 
+      achiever.add_status_change(FactoryGirl.create(:ten_points_now,ts_five_minutes_ago_data))
+
+      expect(achiever.points).to be 10
+    end
+  end
 end
