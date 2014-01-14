@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandi Chart</title>
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="assets/morris.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/jquery.js"></script>
+  <script src="assets/chart.js"></script>
+  <script src="assets/script.js"></script>
+  <script type="text/javascript">
+    var data = [{"r10":38,"r11":0,"r20":45,"r21":10,"r30":108,"r31":0,"r40":6,"r41":0,"timestamp":1389708973000}];
+  </script>
+</head>
+<body>
+  <a href="https://github.com/makaroni4/sandi_meter"><img style="position: absolute; top: 0; left: 0; border: 0;" src="assets/forkme.png" alt="Fork me on GitHub"></a>
+  <div class="container">
+    <header>
+      <h1 class="main-title">Sandi Metz rules</h1>
+      <h2 class="main-description js-report-date"></h2>
+    </header>
+    <section class="pie-charts">
+      <div id="pie1" class="pie-charts-item"></div>
+      <div id="pie2" class="pie-charts-item"></div>
+      <div id="pie3" class="pie-charts-item"></div>
+      <div id="pie4" class="pie-charts-item"></div>
+      <div class="clearfix"></div>
+    </section>
+    <nav class="main-menu">
+      <a href="#" class="main-menu-active js-menu-item" data-rel=".js-charts">Charts</a><a href="#" class="js-menu-item" data-rel=".js-details">Details</a>
+    </nav>
+    <section class="plot-charts js-charts js-tab-item">
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of 100 line classes vs time</div>
+        <div class="plot-charts-item-graph" id="plot1"></div>
+      </div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of 5 line methods vs time</div>
+        <div class="plot-charts-item-graph" id="plot2"></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of methods calls with 4 params vs time</div>
+        <div class="plot-charts-item-graph" id="plot3"></div>
+      </div>
+      <div class="plot-charts-item">
+        <div class="plot-charts-item-caption">Number of controllers with 1 instance variable vs time</div>
+        <div class="plot-charts-item-graph" id="plot4"></div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+    <section class="details js-details js-tab-item">
+      <h2>Methods with 5+ lines</h2>
+<table class="details-stats">
+  <thead>
+    <tr>
+<th class="" title="">Class name</th>
+<th class="" title="">Method name</th>
+<th class="" title="">Size</th>
+<th class="" title="">Path</th>
+</tr>
+
+  </thead>
+  <tbody>
+    <tr>
+<td class="" title="">AsanaToSig::API</td>
+<td class="" title="">make_request</td>
+<td class="" title="">22</td>
+<td class="" title="">./asana_to_sig/lib/asana_to_sig/api.rb:13</td>
+</tr>
+<tr>
+<td class="" title="">AsanaSyncService</td>
+<td class="" title="">sync</td>
+<td class="" title="">17</td>
+<td class="" title="">./app/services/asana_sync_service.rb:13</td>
+</tr>
+<tr>
+<td class="" title="">SyncController</td>
+<td class="" title="">all</td>
+<td class="" title="">12</td>
+<td class="" title="">./app/controllers/sync_controller.rb:9</td>
+</tr>
+<tr>
+<td class="" title="">CreateStatusChanges</td>
+<td class="" title="">change</td>
+<td class="" title="">9</td>
+<td class="" title="">./db/migrate/20130902112616_create_status_changes.rb:2</td>
+</tr>
+<tr>
+<td class="" title="">Achiever</td>
+<td class="" title="">points</td>
+<td class="" title="">9</td>
+<td class="" title="">./app/models/achiever.rb:18</td>
+</tr>
+<tr>
+<td class="" title="">CreateAchievements</td>
+<td class="" title="">change</td>
+<td class="" title="">8</td>
+<td class="" title="">./db/migrate/20130903151751_create_achievements.rb:2</td>
+</tr>
+<tr>
+<td class="" title="">CreatePunishers</td>
+<td class="" title="">change</td>
+<td class="" title="">7</td>
+<td class="" title="">./db/migrate/20130902113055_create_punishers.rb:2</td>
+</tr>
+<tr>
+<td class="" title="">CreateRewards</td>
+<td class="" title="">change</td>
+<td class="" title="">7</td>
+<td class="" title="">./db/migrate/20130830151625_create_rewards.rb:2</td>
+</tr>
+<tr>
+<td class="" title="">AsanaSyncService</td>
+<td class="" title="">initialize</td>
+<td class="" title="">6</td>
+<td class="" title="">./app/services/asana_sync_service.rb:4</td>
+</tr>
+<tr>
+<td class="" title="">AddAsanaSyncDataToAchiever</td>
+<td class="" title="">change</td>
+<td class="" title="">6</td>
+<td class="" title="">./db/migrate/20131217155851_add_asana_sync_data_to_achiever.rb:2</td>
+</tr>
+
+  </tbody>
+</table>
+<div class="hint">NOTE: Red methods are misindented. Continue your way to perfect code by fixing them.</div>
+    </section>
+    <footer class="main-footer">
+      Scanned with love by <a href="https://github.com/makaroni4/sandi_meter">sandi_meter</a> gem.
+      Please, <a href="https://github.com/makaroni4/sandi_meter/issues/new">leave an issue</a> or
+      <a href="mailto:makaroni4@gmail.com">email</a> some feedback!
+    </footer>
+  </div>
+</body>
+</html>
