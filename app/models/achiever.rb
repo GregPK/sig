@@ -13,14 +13,14 @@
 #
 
 class Achiever < ActiveRecord::Base
-  has_many :status_changes, -> { order ts: :desc }, dependent: :destroy
+  has_many :status_changes, -> { order created_at: :desc, id: :desc }, dependent: :destroy
 
   def points
     if @points.nil?
       if status_changes.nil? || status_changes.size == 0
         @points = 0
       else
-        first_sc = status_changes.first
+        first_sc = status_changes.sort_by{ |a| [a.created_at,a.id] }.reverse.first
         @points = first_sc.points_after
       end
     end
@@ -29,7 +29,8 @@ class Achiever < ActiveRecord::Base
 
   def add_status_change(new_status)
     status_changes << new_status
-    @points = new_status.points_after
+    new_status.points_after
+    @points = nil
     new_status
   end
 
