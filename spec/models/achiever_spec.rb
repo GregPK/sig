@@ -79,8 +79,6 @@ describe Achiever do
       achiever.add_status_change(FactoryGirl.create(:ten_points_now, { points_after: 10})) 
       achiever.add_status_change(FactoryGirl.create(:ten_points_now,ts_five_minutes_later_data))
       
-      binding.pry
-
       expect(achiever.points).to eq 10
     end
   end
