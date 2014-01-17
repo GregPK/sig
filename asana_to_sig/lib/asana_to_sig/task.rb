@@ -16,17 +16,12 @@ module AsanaToSig
 
     def manado
       return @manado if @manado
-      @manado = Task::manado_parse(notes)
+      @manado = Task::manado_parse(notes+name)
     end
     
-    def self.manado_parse(asana_task_description)
-      re = Regexp.new('manado:[\s]*([\d]+)',Regexp::IGNORECASE | Regexp::MULTILINE)
-      matches = asana_task_description.match(re)
-      if matches
-        matches[1].to_i
-      else
-        DEFAULT_POINTS
-      end
+    def self.manado_parse(asana_task_text)
+      res = ManadoParser.new(asana_task_text).parse
+      res or DEFAULT_POINTS
     end
 
     def completed?

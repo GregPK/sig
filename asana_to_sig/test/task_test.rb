@@ -44,7 +44,7 @@ class AsanaTaskSpec < MiniTest::Spec
         "Lorem ipsum   ^#{manado}^ et dolor  ",
         "Lorem ipsum\n   ^#{manado}^\n et \ndolor  ",
         "\n\nLorem ipsum\n   ^#{manado}^\n et \ndolor  ",
-        "^#{manado}^^\n et \ndolor  ",
+        "^#{manado}^\n et \ndolor  ",
       ]
       
       string_short_notation.each do |str|
