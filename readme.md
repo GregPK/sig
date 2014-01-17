@@ -34,7 +34,7 @@ In both the API and Web Client:
 ### Planned
 
 #### v 0.2
-  
+
 ##### Features
 
  * *add user authentication* - now 
@@ -93,6 +93,11 @@ Deveped using Ruby 2.0, but I hadn't used any version specific things, so should
 
 ### Deployment instructions
 
-//## Changelog
+## Changelog
+
+### 0.2.0
+
+ * allow for manado markers to be entered into asana task titles (not just notes)
+ * added short syntax for manado in asana (^5^) - introduced mainly for task title usage
 
 
