@@ -65,15 +65,6 @@ group :development, :test do
 end
 
 gem 'simplecov', :require => false, :group => :test
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'unicorn'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
