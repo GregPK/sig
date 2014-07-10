@@ -1,44 +1,33 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# base gems
 gem 'rails', '4.1.4'
-
-# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'unicorn'
 
-# Use SCSS for stylesheets
+#assets and js
 gem 'sass-rails', '~> 4.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-gem "haml-rails"
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
+# views
+gem "haml-rails"
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# ember and JSON API related
+gem 'ember-rails'
+gem "active_model_serializers"
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
+# external dependencies
 gem 'asana_to_sig', :path => 'asana_to_sig/'
 gem 'naught'
 
-gem 'ember-rails'
-gem "active_model_serializers"
+group :doc do
+  gem 'sdoc', require: false
+end
 
 group :development do
   gem 'pry'
@@ -62,9 +51,8 @@ end
 group :development, :test do
   gem "rspec-rails", '~> 3.0.0.beta'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false, :group => :test
 end
 
-gem 'simplecov', :require => false, :group => :test
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'unicorn'
+
 
