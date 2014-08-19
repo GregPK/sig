@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # base gems
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.5'
 gem 'sqlite3'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'unicorn'
