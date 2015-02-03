@@ -1,29 +1,35 @@
 source 'https://rubygems.org'
 
 # base gems
-gem 'rails', '4.1.5'
-gem 'sqlite3'
+gem 'rails', '~> 4.1'
+gem 'mysql2'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'unicorn'
 
 #assets and js
 gem 'sass-rails', '~> 4.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
-gem 'jquery-rails'
+gem 'jquery-rails', '3.0.3'
 
 # views
 gem "haml-rails"
 
 # ember and JSON API related
-gem 'ember-rails'
+gem 'ember-rails', '0.14'
+gem 'ember-source', '1.1.2'
+# gem 'handlebars-source', '1.0.12'
+
 gem "active_model_serializers"
 gem 'jbuilder', '~> 1.2'
 
 # external dependencies
 gem 'asana_to_sig', :path => 'asana_to_sig/'
 gem 'naught'
+
+# old compatibility gems
+gem 'responders', '~> 2.0'
 
 group :doc do
   gem 'sdoc', require: false

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131217163423) do
     t.integer  "achiever_id"
   end
 
-  add_index "achievements", ["achiever_id"], name: "index_achievements_on_achiever_id"
+  add_index "achievements", ["achiever_id"], name: "index_achievements_on_achiever_id", using: :btree
 
   create_table "achievers", force: true do |t|
     t.string   "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131217163423) do
     t.integer  "achiever_id"
   end
 
-  add_index "punishers", ["achiever_id"], name: "index_punishers_on_achiever_id"
+  add_index "punishers", ["achiever_id"], name: "index_punishers_on_achiever_id", using: :btree
 
   create_table "rewards", force: true do |t|
     t.string   "name"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20131217163423) do
     t.integer  "achiever_id"
   end
 
-  add_index "rewards", ["achiever_id"], name: "index_rewards_on_achiever_id"
+  add_index "rewards", ["achiever_id"], name: "index_rewards_on_achiever_id", using: :btree
 
   create_table "status_changes", force: true do |t|
     t.string   "source"
@@ -65,6 +65,6 @@ ActiveRecord::Schema.define(version: 20131217163423) do
     t.integer  "points_after"
   end
 
-  add_index "status_changes", ["achiever_id"], name: "index_status_changes_on_achiever_id"
+  add_index "status_changes", ["achiever_id"], name: "index_status_changes_on_achiever_id", using: :btree
 
 end
