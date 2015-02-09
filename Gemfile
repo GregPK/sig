@@ -1,4 +1,6 @@
+ruby '2.1.1'
 source 'https://rubygems.org'
+
 
 # base gems
 gem 'rails', '~> 4.1'
@@ -60,5 +62,5 @@ group :development, :test do
   gem 'simplecov', :require => false, :group => :test
 end
 
-
+gem 'rails_12factor', group: :production
 
