@@ -1,6 +1,5 @@
 require 'date'
 require 'time'
-require 'pry'
 
 module AsanaToSig
   class Tasks
