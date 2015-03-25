@@ -1,4 +1,4 @@
-ruby '2.0.0'
+ruby '2.1.5'
 source 'https://rubygems.org'
 
 
@@ -63,6 +63,4 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
-
-gem 'rake' # openshift needs this
 
